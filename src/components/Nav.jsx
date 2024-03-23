@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { HiMenuAlt3 } from "react-icons/hi";
 export default function Nav() {
   const productDropdn = useRef(null);
   const enquiryDropdn = useRef(null);
@@ -99,7 +99,7 @@ export default function Nav() {
         <li onClick={() => scrollToSection("contact")}>Talk to us</li>
       </ul>
       <div id="hiddenMenu" onClick={showMenu}>
-        <i className="fa-solid fa-bars"></i>
+        <HiMenuAlt3/>
       </div>
     </nav>
   );
