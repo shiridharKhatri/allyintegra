@@ -4,7 +4,7 @@ export default function About() {
   return (
     <>
       <section id="about" className="about">
-        <h1>WHO WE ARE</h1>
+        <h1>WHO WE ARE?</h1>
         <div className="paragraph">
           <p>
             In the heart of Ally Integra’s philosophy lies the belief in the
