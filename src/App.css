@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=League+Gothic&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -110,6 +111,9 @@ footer {
     height: 3px;
     opacity: 0;
   }
+}
+#navUnorderList a{
+ text-decoration: none;
 }
 #loading {
   display: flex;
@@ -386,7 +390,7 @@ section.about {
 section.about h1 {
   margin: 2rem 0;
   font-size: 4rem;
-  font-family: fantasy;
+  font-family: "Anton", sans-serif;
   font-weight: 400;
   font-style: italic;
 }
@@ -522,7 +526,7 @@ section.enquiryForm {
 section.enquiryForm h1 {
   margin: 2rem 0;
   font-size: 4rem;
-  font-family: fantasy;
+  font-family: "Anton", sans-serif;
   font-weight: 400;
   font-style: italic;
 }
@@ -623,7 +627,7 @@ section.productItem {
 section.productItem h1 {
   margin: 2rem 0;
   font-size: 4rem;
-  font-family: fantasy;
+  font-family: "Anton", sans-serif;
   font-weight: 400;
   font-style: italic;
 }
@@ -818,7 +822,7 @@ section.exporting {
 section.exporting h1 {
   margin: 2rem 0;
   font-size: 4rem;
-  font-family: fantasy;
+  font-family: "Anton", sans-serif;
   font-weight: 400;
   font-style: italic;
   color: #1d1d1d;

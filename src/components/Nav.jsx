@@ -4,7 +4,7 @@ import { HiMenuAlt3 } from "react-icons/hi";
 export default function Nav() {
   const productDropdn = useRef(null);
   const enquiryDropdn = useRef(null);
-  const navUnorderList = useRef(null)
+  const navUnorderList = useRef(null);
   const [active, setActive] = useState({ product: false, enquiry: false });
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -32,14 +32,14 @@ export default function Nav() {
       setActive((prev) => ({ ...prev, enquiry: false }));
     }
   };
-  const showMenu =()=>{
+  const showMenu = () => {
     navUnorderList.current.classList.toggle("activeToggle");
     if (navUnorderList.current.classList.contains("activeToggle")) {
       navUnorderList.current.style.top = "10rem";
     } else {
       navUnorderList.current.style.top = "-65rem";
     }
-  }
+  };
   return (
     <nav id="home">
       <Link to={`/`}>
@@ -50,8 +50,12 @@ export default function Nav() {
         />
       </Link>
       <ul ref={navUnorderList} id="navUnorderList">
-        <li onClick={() => scrollToSection("about")}>Who we are?</li>
-        <li onClick={() => scrollToSection("choose")}>Why Choose us?</li>
+        <Link to={`/`}>
+          <li onClick={() => scrollToSection("about")}>Who we are?</li>
+        </Link>
+        <Link to={`/`}>
+          <li onClick={() => scrollToSection("choose")}>Why Choose us?</li>
+        </Link>
         <li id="Product" onClick={productDropdown}>
           Product{" "}
           {active.product === true ? (
@@ -96,10 +100,12 @@ export default function Nav() {
             </li>
           </ul>
         </li>
-        <li onClick={() => scrollToSection("contact")}>Talk to us</li>
+        <Link to={"/"}>
+          <li onClick={() => scrollToSection("contact")}>Talk to us</li>
+        </Link>
       </ul>
       <div id="hiddenMenu" onClick={showMenu}>
-        <HiMenuAlt3/>
+        <HiMenuAlt3 />
       </div>
     </nav>
   );

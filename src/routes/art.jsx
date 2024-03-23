@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from '../components/Nav'
+import { Link } from 'react-router-dom'
 
 export default function Art() {
   return (
@@ -13,7 +14,11 @@ export default function Art() {
             Our website is currently under construction. Please visit again
             later for updates!
           </p>
-          <button>Go to home</button>
+          <Link to={`/`}>
+            {" "}
+            <button>Go to home</button>
+          </Link>
+          
         </div>
       </section>
     </>
