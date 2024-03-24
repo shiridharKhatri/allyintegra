@@ -59,7 +59,7 @@ export default function Nav() {
         <li id="Product" onClick={productDropdown}>
           Product{" "}
           {active.product === true ? (
-            <i class="fa-solid fa-chevron-up"></i>
+            <i className="fa-solid fa-chevron-up"></i>
           ) : (
             <i className="fa-solid fa-chevron-down"></i>
           )}
@@ -87,7 +87,7 @@ export default function Nav() {
         <li id="enquiry" onClick={enquiryDropdown}>
           Enquiry{" "}
           {active.enquiry === true ? (
-            <i class="fa-solid fa-chevron-up"></i>
+            <i className="fa-solid fa-chevron-up"></i>
           ) : (
             <i className="fa-solid fa-chevron-down"></i>
           )}

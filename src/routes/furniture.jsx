@@ -6,9 +6,9 @@ export default function Furniture() {
   return (
     <>
       <Nav />
-      <section class="productItem">
+      <section className="productItem">
         <h1>Furniture & Home Essentials</h1>
-        <div class="underConstruction">
+        <div className="underConstruction">
           <img src="/const.png" alt="underConstruction" />
           <p>
             Our website is currently under construction. Please visit again

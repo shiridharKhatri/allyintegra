@@ -5,9 +5,9 @@ export default function Textile() {
   return (
     <>
       <Nav />
-      <section class="productItem">
+      <section className="productItem">
         <h1>Textile sanctuary</h1>
-        <div class="productDetails">
+        <div className="productDetails">
           <p>
             Welcome to Textile Sanctuary, your premier destination for exquisite
             home textiles and decor. Explore our diverse collection of

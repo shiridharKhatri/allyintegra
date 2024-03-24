@@ -5,9 +5,9 @@ export default function Footwear() {
   return (
     <>
       <Nav />{" "}
-      <section class="productItem">
+      <section className="productItem">
         <h1>Footwear Emporium</h1>
-        <div class="productDetails">
+        <div className="productDetails">
           <p>
             Welcome to Footwear Emporium, your ultimate destination for stylish
             and comfortable footwear. Explore our wide range of footwear

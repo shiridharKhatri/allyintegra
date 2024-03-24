@@ -6,9 +6,9 @@ export default function Art() {
   return (
     <>
     <Nav/>
-    <section class="productItem">
+    <section className="productItem">
         <h1>Art</h1>
-        <div class="underConstruction">
+        <div className="underConstruction">
           <img src="/const.png" alt="underConstruction" />
           <p>
             Our website is currently under construction. Please visit again

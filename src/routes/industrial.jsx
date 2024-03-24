@@ -6,9 +6,9 @@ export default function Industrial() {
   return (
     <>
       <Nav />
-      <section class="productItem">
+      <section className="productItem">
         <h1>Industrial Solutions</h1>
-        <div class="underConstruction">
+        <div className="underConstruction">
           <img src="/const.png" alt="underConstruction" />
           <p>
             Our website is currently under construction. Please visit again
