@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "../components/Nav";
 import Head from "../components/Head";
 import { FaChevronRight } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 export default function Textile() {
   return (
     <>
@@ -42,74 +43,74 @@ export default function Textile() {
             <div className="items">
               <h2>Bedsheet</h2>
               <p>Tailored Tranquility: Designing Your Dream Sleep Sanctuary</p>
-              <a href="/product/Home-textiles-&-Handicrafts/bedsheet">
+              <Link to="/product/Home-textiles-&-Handicrafts/bedsheet">
                 <button>
                   View more&nbsp;
                   <FaChevronRight />
                 </button>
-              </a>
+              </Link>
             </div>
             <div className="items">
               <h2>Cushions</h2>
               <p>Cozy and Classy, Soft and Sassy</p>
-              <a href="/product/Home-textiles-&-Handicrafts/cushions">
+              <Link to="/product/Home-textiles-&-Handicrafts/cushions">
                 <button>
                   View more&nbsp;
                   <FaChevronRight />
                 </button>
-              </a>
+              </Link>
             </div>
             <div className="items">
               <h2>Macrame</h2>
               <p>Woven Wonders: Crafting Love, Knot by Knot.</p>
-              <a href="">
+              <Link to="">
                 <button>
                   View more&nbsp;
                   <FaChevronRight />
                 </button>
-              </a>
+              </Link>
             </div>
             <div className="items">
               <h2>Curtains</h2>
               <p>Curtain Call: Setting the Stage for Your Home's Story</p>
-              <a href="">
+              <Link to="">
                 <button>
                   View more&nbsp;
                   <FaChevronRight />
                 </button>
-              </a>
+              </Link>
             </div>
             <div className="items">
               <h2>Wall Hangings</h2>
               <p>Wall Wonders: Walls That Speak Volumes.</p>
-              <a href="">
+              <Link to="">
                 <button>
                   View more&nbsp;
                   <FaChevronRight />
                 </button>
-              </a>
+              </Link>
             </div>
             <div className="items">
               <h2>Carpets & Rugs</h2>
               <p>Woven Wonders: Weaving Luxurious Stories Under Your Feet</p>
-              <a href="">
+              <Link to="">
                 <button>
                   View more&nbsp;
                   <FaChevronRight />
                 </button>
-              </a>
+              </Link>
             </div>
             <div className="items">
               <h2>Pouffe Stools</h2>
               <p>
               Seating with Substance: Pouffe Stools that Echo Elegance
               </p>
-              <a href="">
+              <Link to="">
                 <button>
                   View more&nbsp;
                   <FaChevronRight />
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

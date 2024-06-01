@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination } from "swiper/modules";
 import ImageViewer from "react-simple-image-viewer";
 import { FaWhatsapp } from "react-icons/fa";
+
 export default function Bedsheet() {
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
