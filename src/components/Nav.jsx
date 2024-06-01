@@ -208,7 +208,7 @@ export default function Nav(props) {
               <Link to="/product/Home-textiles-&-Handicrafts">Home textiles & Handicrafts</Link>
             </li>
             <li>
-              <Link to="/product/Footwear-Emporiumr">Footwear Emporium</Link>
+              <Link to="/product/Footwear-Emporium">Footwear Emporium</Link>
             </li>
             <li>
               <Link to="/product/Furniture-&Home_Essentials">Furniture & Home Essentials</Link>
