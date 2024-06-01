@@ -1,41 +1,117 @@
 import React from "react";
 import Nav from "../components/Nav";
-
+import Head from "../components/Head";
+import { FaChevronRight } from "react-icons/fa6";
 export default function Textile() {
   return (
     <>
-      <Nav />
+      <Nav position={"fixed"} bg={"transparent"} />
+      <Head
+        imgBg={"../product/18.png"}
+        display={"none"}
+        headText={"Home textiles & Handicrafts"}
+        belowtextFirst=" Blending"
+        keyPoint=" Comfort"
+        belowtextSecond=" with elegance"
+      />
       <section className="productItem">
-        <h1>Textile sanctuary</h1>
+        <h1>Introduction</h1>
         <div className="productDetails">
           <p>
-            Welcome to Textile Sanctuary, your premier destination for exquisite
-            home textiles and decor. Explore our diverse collection of
-            high-quality products designed to elevate every corner of your
-            living space.
+            With our rich experience and prowess, we're set to make waves on the
+            global stage, specifically catering to bulk requirements of
+            importers and distributors worldwide. Our mission is to deliver
+            original, high-quality products that impeccably mirror the
+            deep-rooted traditions of our craft, while simultaneously reflecting
+            modern style and taste.Our curated collections of home textiles and
+            handicrafts are designed to infuse a blend of comfort, style, and
+            authenticity into your spaces.
           </p>
           <p>
-            From luxurious mattresses and cozy bedsheets to stylish quilts and
-            plush pillows, we offer a wide range of bedding essentials crafted
-            for ultimate comfort and relaxation. Complete your bedroom ensemble
-            with our selection of bed linen, including sheets, duvet covers, and
-            pillowcases, available in a variety of colors and designs to suit
-            your personal style.
+            {" "}
+            Be it the soft allure of our textiles aimed to enhance your living
+            areas, or the distinctive allure of our handcrafted items – each
+            product is a perfect amalgamation of tradition and modernity. As
+            experienced professionals in the industry, we've refined our skills
+            to create pieces that harmoniously balance ageless appeal and
+            current trends.
           </p>
-          <p>
-            Enhance the ambiance of any room with our elegant curtains, which
-            add a touch of sophistication and privacy to your home. Wrap
-            yourself in softness with our collection of towels and shawls,
-            perfect for adding warmth and comfort to your daily routine.
-          </p>
-          <p>
-            As exporters of premium textiles, we take pride in offering
-            exceptional products that meet the highest standards of quality and
-            craftsmanship. Contact us today to explore our collection and
-            request images of our available products. Let Textile Sanctuary be
-            your trusted partner in creating a sanctuary of comfort and
-            style in your home.
-          </p>
+        </div>
+        <div className="categories">
+          <div className="cardSection">
+            <div className="items">
+              <h2>Bedsheet</h2>
+              <p>Tailored Tranquility: Designing Your Dream Sleep Sanctuary</p>
+              <a href="/product/Home-textiles-&-Handicrafts/bedsheet">
+                <button>
+                  View more&nbsp;
+                  <FaChevronRight />
+                </button>
+              </a>
+            </div>
+            <div className="items">
+              <h2>Cushions</h2>
+              <p>Cozy and Classy, Soft and Sassy</p>
+              <a href="/product/Home-textiles-&-Handicrafts/cushions">
+                <button>
+                  View more&nbsp;
+                  <FaChevronRight />
+                </button>
+              </a>
+            </div>
+            <div className="items">
+              <h2>Macrame</h2>
+              <p>Woven Wonders: Crafting Love, Knot by Knot.</p>
+              <a href="">
+                <button>
+                  View more&nbsp;
+                  <FaChevronRight />
+                </button>
+              </a>
+            </div>
+            <div className="items">
+              <h2>Curtains</h2>
+              <p>Curtain Call: Setting the Stage for Your Home's Story</p>
+              <a href="">
+                <button>
+                  View more&nbsp;
+                  <FaChevronRight />
+                </button>
+              </a>
+            </div>
+            <div className="items">
+              <h2>Wall Hangings</h2>
+              <p>Wall Wonders: Walls That Speak Volumes.</p>
+              <a href="">
+                <button>
+                  View more&nbsp;
+                  <FaChevronRight />
+                </button>
+              </a>
+            </div>
+            <div className="items">
+              <h2>Carpets & Rugs</h2>
+              <p>Woven Wonders: Weaving Luxurious Stories Under Your Feet</p>
+              <a href="">
+                <button>
+                  View more&nbsp;
+                  <FaChevronRight />
+                </button>
+              </a>
+            </div>
+            <div className="items">
+              <h2>Pouffe Stools</h2>
+              <p>
+              Seating with Substance: Pouffe Stools that Echo Elegance
+              </p>
+              <a href="">
+                <button>
+                  View more&nbsp;
+                  <FaChevronRight />
+                </button>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </>

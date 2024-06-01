@@ -7,34 +7,45 @@ export default function Footer() {
         <ul>
           <li>
             <a
-              style={{ background: "#0165e1" }}
               href="https://www.facebook.com/profile.php?id=61556553082003"
+              style={{ backgroundColor: "#0165e1" }}
+              title="Facebook"
             >
               <i className="fa-brands fa-facebook-f"></i>
             </a>
           </li>
           <li>
-            <a style={{ background: "#c13584" }} href="#">
+            <a
+              href="https://www.instagram.com/ally_integra/"
+              style={{ backgroundColor: "#c13584" }}
+              title="Instagram"
+            >
               <i className="fa-brands fa-instagram"></i>
             </a>
           </li>
           <li>
             <a
-              style={{ background: " #000000" }}
               href="https://twitter.com/AllyIntegra"
+              style={{ backgroundColor: "#000000" }}
+              title="Twitter"
             >
-              <i className="fa-brands fa-x-twitter"></i>
+              <i className="fa-brands fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a style={{ background: "#0a66c2" }} href="#">
+            <a
+              href="https://www.linkedin.com/company/your_linkedin_page"
+              style={{ backgroundColor: "#0a66c2" }}
+              title="LinkedIn"
+            >
               <i className="fa-brands fa-linkedin-in"></i>
             </a>
           </li>
           <li>
             <a
-              style={{ background: "#25d366" }}
               href="https://wa.me/+919779775469"
+              style={{ backgroundColor: "#25d366" }}
+              title="WhatsApp"
             >
               <i className="fa-brands fa-whatsapp"></i>
             </a>

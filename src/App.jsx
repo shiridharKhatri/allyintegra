@@ -5,13 +5,11 @@ import Root from "./routes/root";
 import Textile from "./routes/textile";
 import Footwear from "./routes/footwear";
 import Furniture from "./routes/furniture";
-import Art from "./routes/art";
-import Sanitaryware from "./routes/sanitaryware";
 import Industrial from "./routes/industrial";
 import ProductEn from "./routes/productEn";
 import PartnershipEn from "./routes/partnershipEn";
-import { useEffect, useState } from "react";
-import Loader from "./components/Loader";
+import Bedsheet from "./routes/textiles/Bedsheet";
+import Cushions from "./routes/textiles/Cushions";
 function App() {
   const router = createBrowserRouter([
     {
@@ -19,40 +17,37 @@ function App() {
       element: <Root />,
     },
     {
-      path: "/textile",
+      path: "/product/Home-textiles-&-Handicrafts",
       element: <Textile />,
     },
     {
-      path: "/footwear",
+      path: "/product/Footwear-Emporium",
       element: <Footwear />,
     },
     {
-      path: "/furniture",
+      path: "/product/Furniture-&Home_Essentials",
       element: <Furniture />,
     },
+
     {
-      path: "/art",
-      element: <Art />,
-    },
-    {
-      path: "/sanitaryware",
-      element: <Sanitaryware />,
-    },
-    {
-      path: "/sanitaryware",
-      element: <Sanitaryware />,
-    },
-    {
-      path: "/industrial",
+      path: "/product/Industrial-Solutions",
       element: <Industrial />,
     },
     {
-      path: "/productEnquiry",
+      path: "/enquiry/product-enquiry",
       element: <ProductEn />,
     },
     {
-      path: "/partnershipEnquiry",
+      path: "/enquiry/partnership-enquiry",
       element: <PartnershipEn />,
+    },
+    {
+      path: "/product/Home-textiles-&-Handicrafts/bedsheet",
+      element: <Bedsheet/>,
+    },
+    {
+      path: "/product/Home-textiles-&-Handicrafts/cushions",
+      element: <Cushions/>,
     },
   ]);
 

@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=League+Gothic&display=swap");
+@font-face {
+  font-family: paragraph_font;
+  src: url(./font/NeueMontreal-Regular.otf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: paragraph_font_head;
+  src: url(./font/NeueMontreal-Bold.otf);
+  font-weight: normal;
+}
 * {
   margin: 0;
   padding: 0;
@@ -108,7 +118,7 @@ footer {
   align-items: center;
 }
 .scrolldown {
-  --color: #de5935;
+  --color: #00abe1;
   --sizeX: 30px;
   --sizeY: 50px;
   position: relative;
@@ -284,47 +294,58 @@ footer {
 }
 
 nav {
-  background: #1d1d1d;
-  height: 20vh;
+  background: transparent;
+  height: 10rem;
   padding: 1.5rem 2rem;
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  transition: 0.3s ease;
+  z-index: 99999;
+  background: #1d1d1d;
+}
+nav.scrolled {
+  background: #1d1d1d !important;
 }
 nav img {
-  height: 11rem;
+  height: 7rem;
 }
 nav ul {
+  list-style: none;
+}
+nav ul.hiddenMobile {
   display: flex;
   list-style: none;
   position: relative;
 }
+nav ul.hiddenDesktop {
+  display: none;
+}
 nav ul li {
   margin: 0 1.5rem;
   cursor: pointer;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
-  font-size: 2.2rem;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-weight: bold;
+  font-size: 2rem;
+  font-family: Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
+  font-weight: 700;
   font-style: italic;
   transition: 0.2s ease;
 }
 nav ul li a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 2.2rem;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 2rem;
   font-weight: bold;
   font-style: italic;
   transition: 0.2s ease;
 }
 nav ul li a:hover {
-  color: #de5935;
+  color: #00abe1;
 }
 nav ul li:hover {
-  color: #de5935;
+  color: #00abe1;
 }
 #enquiry {
   position: relative;
@@ -332,7 +353,7 @@ nav ul li:hover {
 #dropdown {
   position: absolute;
   background: #ffffff;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: self-start;
   justify-content: start;
@@ -342,10 +363,12 @@ nav ul li:hover {
   top: 4rem;
   right: 0rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(0);
+  transition: 0.2s ease;
 }
 #productDropdown {
   position: absolute;
-  display: none;
+  display: flex;
   flex-direction: column;
   top: 4rem;
   right: 25rem;
@@ -353,6 +376,8 @@ nav ul li:hover {
   border-radius: 1rem;
   background: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(0);
+  transition: 0.2s ease;
 }
 #productDropdown li {
   margin: 1rem 0;
@@ -373,23 +398,29 @@ nav ul li:hover {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 header {
-  height: 80vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 100vh;
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: start;
-  flex-direction: column;
+  background: linear-gradient(
+    109.6deg,
+    rgb(36, 45, 57) 11.2%,
+    rgb(16, 37, 60) 51.2%,
+    rgb(0, 0, 0) 98.6%
+  );
+  position: relative;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .waves {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: auto;
   min-height: 100px;
   max-height: 150px;
+  bottom: 0;
 }
 
 .content {
@@ -428,10 +459,27 @@ header {
 }
 
 header .headText {
-  margin: 15rem 0 0 12rem;
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 13rem;
 }
 header .headText img {
-  height: 7rem;
+  width: 40rem;
+}
+header .image {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .image img {
+  height: 35rem;
+}
+header .headText span {
+  color: #00abe1;
 }
 header .headText h1 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -441,10 +489,10 @@ header .headText h1 {
 }
 header .headText h3 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: #ffffff;
   margin-top: 1rem;
-  font-family: sans-serif;
+  font-family: paragraph_font;
 }
 section.about {
   width: 100%;
@@ -458,7 +506,7 @@ section.about {
 section.about h1 {
   margin: 2rem 0;
   font-size: 4rem;
-  font-family: "Anton", sans-serif;
+  font-family: Anton, sans-serif;
   font-weight: 400;
   font-style: italic;
 }
@@ -496,18 +544,21 @@ section.about .chooseUs .specialized .detail {
 }
 section.about .chooseUs .flexItems .detail h2 {
   font-size: 2.5rem;
-  font-family: sans-serif;
+  font-family: paragraph_font_head;
   margin-bottom: 1rem;
-  color: #de5935;
+  color: #1d1d1d;
 }
 section.about .chooseUs .flexItems .detail p {
   font-size: 1.7rem;
-  font-family: sans-serif;
+  font-family: paragraph_font;
+  line-height: 1.5;
 }
 section.about .paragraph p {
   font-size: 1.8rem;
   margin: 1rem 0 3rem 0;
-  font-family: sans-serif;
+  font-family: paragraph_font;
+  line-height: 1.5;
+  text-align: justify;
 }
 section.about .paragraph img {
   border-radius: 2rem;
@@ -594,7 +645,7 @@ section.enquiryForm {
 section.enquiryForm h1 {
   margin: 2rem 0;
   font-size: 4rem;
-  font-family: "Anton", sans-serif;
+  font-family: Anton, sans-serif;
   font-weight: 400;
   font-style: italic;
 }
@@ -612,7 +663,7 @@ section.enquiryForm form button {
   margin-top: 4rem;
   border-radius: 3rem;
   border: none;
-  background: #de5935;
+  background: #00abe1;
   color: #ffffff;
   cursor: pointer;
   margin: auto;
@@ -686,7 +737,7 @@ section.enquiryForm form .formItem textarea:focus {
   border: 0.2rem solid rgba(222, 90, 53, 0.64);
 }
 section.productItem {
-  padding: 2rem;
+  padding: 5rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -695,7 +746,7 @@ section.productItem {
 section.productItem h1 {
   margin: 2rem 0;
   font-size: 4rem;
-  font-family: "Anton", sans-serif;
+  font-family: Anton, sans-serif;
   font-weight: 400;
   font-style: italic;
 }
@@ -742,12 +793,13 @@ section.contact .flexDis {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #de5935;
+  background: #1d1d1d;
   border-radius: 2rem;
   width: 95%;
+  height: 45rem;
 }
 section.contact .flexDis img {
-  height: 30rem;
+  height: 40rem;
 }
 section.contact .flexDis .disOne {
   width: 50%;
@@ -758,6 +810,12 @@ section.contact .flexDis .disTwo {
   margin-left: 5rem;
   width: 50%;
 }
+section.contact .flexDis .disTwo h1 {
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  color: #ffffff;
+  font-family: paragraph_font_head;
+}
 section.contact .flexDis .disTwo ul {
   list-style: none;
 }
@@ -765,8 +823,9 @@ section.contact .flexDis .disTwo ul li {
   margin: 1rem 0;
 }
 section.contact .flexDis .disTwo ul li {
-  font-family: sans-serif;
-  font-size: 2rem;
+  font-family: paragraph_font;
+  font-size: 1.9rem;
+  font-weight: 400;
 }
 section.contact .flexDis .disTwo ul li a {
   text-decoration: none;
@@ -774,7 +833,6 @@ section.contact .flexDis .disTwo ul li a {
   display: flex;
   justify-content: start;
   align-items: center;
-  font-weight: bold;
 }
 section.contact .flexDis .disTwo ul li a span {
   background-color: #1d1d1d;
@@ -793,7 +851,7 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 3rem 0;
+  padding: 1rem 0 3rem 0;
 }
 footer p {
   font-size: 1.5rem;
@@ -820,65 +878,13 @@ footer ul li a {
   color: #fbfaf9;
   cursor: pointer;
 }
-@media screen and (max-width: 1020px) {
-  #hiddenMenu {
-    display: block;
-    font-size: 4rem;
-    color: #fbfaf9;
-  }
-  nav ul {
-    position: absolute;
-    height: auto;
-    background: #1d1d1d;
-    flex-direction: column;
-    padding: 2rem;
-    top: -65rem;
-    right: 0;
-    z-index: 999;
-    width: 35rem;
-    transition: 0.2s ease;
-  }
-  nav ul li {
-    margin: 2rem 1rem;
-  }
-  #enquiry ul {
-    position: relative;
-    top: 0;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    background: #ffffff;
-    justify-content: start;
-    width: auto;
-    padding: 1.5rem;
-    color: #ffffff;
-    margin-top: 2rem;
-  }
-  section.about .paragraph {
-    width: 95%;
-  }
-  #productDropdown li a {
-    font-size: 1.8rem;
-  }
-  #productDropdown li {
-    width: auto;
-  }
-  #productDropdown {
-    display: none;
-    position: relative;
-    margin: 0;
-    top: 0;
-    right: 0;
-    margin-top: 2rem;
-    width: auto;
-  }
-  #dropdown li a {
-    color: #1d1d1d;
-    font-size: 1.8rem;
-  }
-  header .headText {
-    margin: 15rem 0 0 5rem;
-  }
+footer .socialIcons {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+  border-top: 0.1rem solid #b9b3b3;
 }
 section.exporting {
   padding: 4rem;
@@ -890,7 +896,7 @@ section.exporting {
 section.exporting h1 {
   margin: 2rem 0;
   font-size: 4rem;
-  font-family: "Anton", sans-serif;
+  font-family: Anton, sans-serif;
   font-weight: 400;
   font-style: italic;
   color: #1d1d1d;
@@ -920,15 +926,459 @@ section.exporting .items h4 {
   margin: 1rem 0 1rem 0;
   font-family: sans-serif;
   text-align: center;
-  color: #101010;
+  color: #1d1d1d;
 }
 section.exporting .items img {
   height: 11rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   margin-top: 1rem;
-  background-image: linear-gradient(135deg, #ffaa85 10%, #b3315f 100%);
   padding: 0.1rem;
 }
+
+/* Countries section design  */
+section.countries {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+section.countries h1 {
+  margin: 8rem 0 2rem 0;
+  font-size: 4rem;
+  font-family: Anton, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+section.countries .index {
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+}
+section.countries .index .items {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 1rem;
+  background: linear-gradient(
+    109.6deg,
+    rgb(36, 45, 57) 11.2%,
+    rgb(16, 37, 60) 51.2%,
+    rgb(0, 0, 0) 98.6%
+  );
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  border-radius: 3rem;
+}
+section.countries .index .items img {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 1rem;
+}
+section.countries .index .items h4 {
+  font-family: paragraph_font;
+  color: #ffffff;
+  font-weight: 400;
+}
+section.countries .mainCountriesSection {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+}
+section.countries .mainCountriesSection img {
+  width: 100%;
+  height: 100%;
+}
+section.countries .mainCountriesSection h3 {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: paragraph_font;
+  pointer-events: none;
+}
+section.countries .mainCountriesSection h3 span.countryIcon {
+  color: #e40c2b;
+  margin-right: 0.3rem;
+  cursor: pointer;
+  position: relative;
+  font-size: 2.5rem;
+  display: flex;
+  pointer-events: auto;
+}
+
+section.countries .mainCountriesSection h3 span.countryName {
+  padding: 0.5rem 1rem;
+  border-radius: 3rem;
+  height: 2.5rem;
+  background: #445;
+  color: #ffffff;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  transform: scale(0);
+  pointer-events: none;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+section.countries .mainCountriesSection h3 span.countryIcon:hover {
+  color: #445;
+}
+section.countries
+  .mainCountriesSection
+  h3
+  span.countryIcon:hover
+  + span.countryName {
+  transform: scale(1);
+}
+section.countries .mainCountriesSection h3.usa {
+  top: 49%;
+  left: 19%;
+}
+section.countries .mainCountriesSection h3.germany {
+  top: 42.5%;
+  left: 48.7%;
+}
+section.countries .mainCountriesSection h3.uae {
+  top: 57.8%;
+  left: 60.9%;
+  transform: rotate(45deg);
+}
+section.countries .mainCountriesSection h3.australia {
+  top: 76%;
+  left: 82%;
+}
+section.countries .mainCountriesSection h3.qatar {
+  top: 54.9%;
+  left: 59.76%;
+}
+section.countries .mainCountriesSection h3.kuwait {
+  top: 53.1%;
+  left: 58.8%;
+}
+section.countries .mainCountriesSection h3.netherlands {
+  top: 41.2%;
+  left: 47.7%;
+}
+section.countries .mainCountriesSection h3.france {
+  top: 45%;
+  left: 46.8%;
+}
+section.countries .mainCountriesSection h3.uk {
+  top: 38%;
+  left: 45.1%;
+}
+section.productItem .categories .cardSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  margin: 8rem auto 0rem;
+}
+section.productItem .categories .cardSection .items {
+  padding: 2rem;
+  background: #f0fbff;
+  margin: 2rem;
+  border-radius: 1rem;
+}
+section.productItem .categories .cardSection .items h2 {
+  font-size: 2.5rem;
+  font-family: paragraph_font_head;
+  color: #1d1d1d;
+}
+section.productItem .categories .cardSection .items p {
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  font-family: paragraph_font;
+  color: #1d1d1d;
+}
+section.productItem .categories .cardSection .items button {
+  padding: 1rem 2rem;
+  height: 4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  background: #1d1d1d2e;
+  color: #1d1d1d;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+section.productItem .categories .cardSection .items a {
+  text-decoration: none;
+}
+section.pricing {
+  background: radial-gradient(
+    circle,
+    rgb(64, 64, 64) 0%,
+    rgba(26, 28, 32, 255) 51.2%,
+    rgb(0, 0, 0) 98.6%
+  );
+  color: #ffffff;
+}
+section.pricing p {
+  font-size: 1.8rem;
+  font-family: paragraph_font;
+  width: 80%;
+  line-height: 1.5;
+  text-align: center;
+}
+section.pricing .pricingContainer {
+  display: flex;
+  margin: 7rem 0 10rem;
+  justify-content: center;
+  align-items: center;
+}
+section.pricing .pricingContainer .cards {
+  padding: 4rem 2rem 2rem 2rem;
+  background: linear-gradient(179deg, #16191d 38.2%, rgb(63, 61, 61) 100.9%);
+  margin: 0 1rem;
+  height: 45rem;
+  width: 25rem;
+  border-radius: 1rem;
+  color: white;
+}
+section.pricing .pricingContainer .cards h3 {
+  text-align: center;
+  font-size: 2.3rem;
+  font-family: paragraph_font;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+section.pricing .pricingContainer .cards h2 {
+  text-align: center;
+  font-size: 3.7rem;
+  font-family: "paragraph_font";
+  padding-bottom: 2rem;
+  border-bottom: 0.2rem solid #f27100;
+  font-weight: 400;
+}
+section.pricing .pricingContainer .cards ul {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+section.pricing .pricingContainer .cards ul li {
+  margin: 0.4rem 0;
+  font-size: 1.4rem;
+  font-family: paragraph_font;
+}
+section.pricing .pricingContainer .firstSection,
+section.pricing .pricingContainer .thirdSection {
+  height: 40rem;
+  background: transparent;
+  color: #1d1d1d;
+  border: 0.1rem solid #ffffff;
+  color: #ffffff;
+}
+section.pricing .pricingContainer .firstSection h2,
+section.pricing .pricingContainer .thirdSection h2 {
+  border-bottom: 0.2rem solid #ffffff;
+}
+section.bedsheet .imageGal {
+  margin-bottom: 15rem;
+}
+section.bedsheet .headtext {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.bedsheet .headtext .slide {
+}
+section.bedsheet .headtext .text {
+  width: 85%;
+  color: #ffffff;
+  padding: 0 15rem;
+}
+section.bedsheet .headtext .text h1 {
+  font-size: 3rem;
+  font-family: paragraph_font_head;
+  margin-bottom: 1rem;
+  margin-top: 20rem;
+}
+section.bedsheet .headtext .text p {
+  font-size: 2rem;
+  margin: 2rem 0;
+  font-family: paragraph_font;
+  line-height: 1.5;
+}
+section.bedsheet .imageGal h1 {
+  font-size: 3rem;
+  margin: 5rem 0 3rem 3rem;
+  font-family: "paragraph_font_head";
+}
+section.bedsheet .imageGal .imgContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  width: 95%;
+  margin: 4rem auto;
+}
+section.bedsheet .imageGal .imgContainer img {
+  width: 100%;
+  cursor: pointer;
+}
+section.bedsheet .callToAction a {
+  text-decoration: none;
+}
+section.bedsheet .callToAction button {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  border: none;
+  margin: 0 0 0 3rem;
+  cursor: pointer;
+  color: #ffffff;
+  background: #25d366;
+  transition: 0.3s ease;
+}
+
+section.bedsheet .callToAction button:hover {
+  background: #1d1d1d;
+}
+.swiper-pagination-bullet-active {
+  width: 3rem !important;
+  height: 1rem !important;
+  border-radius: 1rem !important;
+  background: #ffffff !important;
+}
+@media screen and (max-width: 1020px) {
+  #hiddenMenu {
+    display: block;
+    font-size: 4rem;
+    color: #fbfaf9;
+  }
+  nav {
+    background: #1d1d1d !important;
+    position: relative !important;
+  }
+  nav img {
+    height: 9rem;
+  }
+  nav ul.hiddenDesktop {
+    position: absolute;
+    height: auto;
+    background: #1d1d1d;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    right: 0;
+    z-index: 999;
+    width: 35rem;
+    transition: 0.2s ease;
+    top: 10rem;
+    transform: scale(0);
+  }
+  nav ul.hiddenMobile {
+    display: none;
+  }
+
+  nav ul li {
+    margin: 2rem 1rem;
+  }
+  #enquiry ul {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    justify-content: start;
+    width: auto;
+    padding: 1.5rem;
+    color: #ffffff;
+    margin-top: 2rem;
+    display: none;
+  }
+  section.about .paragraph {
+    width: 95%;
+  }
+  #productDropdown li a {
+    font-size: 1.8rem;
+  }
+  #productDropdown li {
+    width: auto;
+  }
+  #productDropdown {
+    position: relative;
+    margin: 0;
+    top: 0;
+    right: 0;
+    margin-top: 2rem;
+    width: auto;
+    display: none;
+  }
+  #dropdown li a {
+    color: #1d1d1d;
+    font-size: 1.8rem;
+  }
+  header {
+    height: 80vh;
+  }
+  header .headText {
+    margin: 15rem 0 0 5rem;
+  }
+  section.countries .index {
+    position: relative;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(6, 2fr);
+    margin-top: 3rem;
+  }
+  section.countries .mainCountriesSection h3.usa {
+    top: 40%;
+  }
+  section.countries .mainCountriesSection h3.uk {
+    top: 31%;
+  }
+  section.countries .mainCountriesSection h3.netherlands {
+    top: 33.5%;
+    left: 47.5%;
+  }
+  section.countries .mainCountriesSection h3.germany {
+    top: 35.5%;
+  }
+  section.countries .mainCountriesSection h3.france {
+    top: 37%;
+    left: 46.8%;
+  }
+  section.countries .mainCountriesSection h3.australia {
+    top: 62%;
+    left: 81%;
+  }
+  section.countries .mainCountriesSection h3.kuwait {
+    top: 43.5%;
+    left: 58.4%;
+  }
+  section.countries .mainCountriesSection h3.qatar {
+    top: 44.9%;
+    left: 59.4%;
+  }
+  section.countries .mainCountriesSection h3.uae {
+    top: 47.5%;
+    left: 60.5%;
+  }
+}
+@media screen and (max-width: 930px) {
+  section.countries .mainCountriesSection h3 {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 800px) {
   section.about .chooseUs .partnership {
     flex-direction: column-reverse !important;
@@ -951,7 +1401,7 @@ section.exporting .items img {
     height: auto;
   }
   nav img {
-    height: 8rem;
+    height: 10rem;
   }
   section.productItem .productDetails {
     width: 100%;
@@ -985,10 +1435,85 @@ section.exporting .items img {
   section.exporting .items {
     margin: 1rem;
   }
+  section.countries .index {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    display: flex;
+  }
+  section.pricing p {
+    width: 95%;
+  }
+  section.pricing .pricingContainer .cards {
+    width: 40%;
+  }
+  section.pricing .pricingContainer .cards ul li {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  section.bedsheet .headtext .text {
+    padding: 0 3rem;
+  }
+  section.bedsheet .headtext {
+    height: 80vh;
+  }
+  section.bedsheet .headtext .text h1 {
+    margin-top: 12rem;
+  }
+  section.bedsheet .imageGal .imgContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 580px) {
+  section.pricing .pricingContainer .cards {
+    height: 38rem;
+  }
+  section.pricing .pricingContainer .firstSection,
+  section.pricing .pricingContainer .thirdSection {
+    height: 35rem;
+  }
+  section.pricing .pricingContainer .cards h3 {
+    font-size: 1.4rem;
+  }
+  section.pricing .pricingContainer .cards h2 {
+    font-size: 2rem;
+  }
+  section.pricing .pricingContainer .cards ul li {
+    font-size: 1.2rem;
+  }
+  section.pricing .pricingContainer .cards {
+    margin: 0.3rem;
+  }
+  section.productItem .categories .cardSection {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    margin: 8rem auto 5rem;
+  }
+  section.productItem {
+    padding: 5rem 0;
+  }
+  section.productItem .productDetails {
+    width: 90%;
+  }
+  section.bedsheet .headtext .text h1 {
+    margin-top: 9rem;
+  }
+  section.bedsheet .headtext .text {
+    width: 100%;
+  }
+  section.bedsheet .headtext .text {
+    padding: 0px 2rem;
+  }
+  section.bedsheet .headtext .text p {
+    font-size: 1.5rem;
+  }
+  section.bedsheet .imageGal .imgContainer {
+    gap: 1rem;
+  }
 }
 @media screen and (max-width: 500px) {
   header .headText {
-    margin: 15rem 0 0 2rem;
+    margin: 0 0 0 2rem;
   }
   header .headText img {
     height: 5rem;
@@ -1035,5 +1560,50 @@ section.exporting .items img {
   }
   section.contact {
     padding: 0;
+  }
+  header .headText img {
+    width: auto;
+  }
+  section.countries .index {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+  }
+  section.contact .flexDis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1d1d1d;
+    border-radius: 2rem;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+  section.pricing p {
+    font-size: 1.5rem;
+    text-align: justify;
+  }
+  section.pricing .pricingContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+  section.pricing .pricingContainer .cards {
+    width: 90%;
+    height: auto;
+    margin: 2rem 0;
+  }
+  section.pricing .pricingContainer .cards h3 {
+    font-size: 2.4rem;
+  }
+  section.pricing .pricingContainer .cards h2 {
+    font-size: 3rem;
+  }
+  section.pricing .pricingContainer .cards ul li {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  section.countries .index {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

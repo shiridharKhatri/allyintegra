@@ -1,30 +1,48 @@
 import React from "react";
 
-export default function Head() {
-  const handleScrollDown = ()=>{
+export default function Head(props) {
+  const handleScrollDown = () => {
     const section = document.getElementById("footer");
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
   return (
     <header
-    id="home"
+      id="home"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)),
-        url(/header.png)`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, .5)),
+        url(${props.imgBg})`,
       }}
     >
-      <div className="headText">
-        <h1>Welcome to</h1>
-        <img src="/name.png" alt="name" />
-        <h3>Where Collaboration Meets Integration</h3>
+      <div className="headText" id="headText">
+        <h1 style={{ pointerEvents: "none", display: props.display }}>
+          {" "}
+          Welcome to
+        </h1>
+        <img
+          style={{ pointerEvents: "none", display: props.display }}
+          src="/name.png"
+          alt="name"
+        />
+        <h3 style={{ pointerEvents: "none", display: props.display }}>
+          Where <span>Collaboration</span> Meets Integration
+        </h3>
+        <h1>{props.headText}</h1>
+        <h3>
+          {props.belowtextFirst}
+          <span>
+            {props.keyPoint}
+            </span>
+            {props.belowtextSecond}
+        
+        </h3>
       </div>
-
+      <div className="image"></div>
       <svg
         className="waves"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28"
         preserveAspectRatio="none"
         shapeRendering="auto"

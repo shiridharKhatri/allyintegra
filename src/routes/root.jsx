@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Head from "../components/Head";
 import About from "../components/About";
 import Choose from "../components/Choose";
-import Exporting from "../components/Exporting";
 import Contact from "../components/Contact";
 import Nav from "../components/Nav";
-
+import Countries from "../components/Countries";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Pricing from "../components/Pricing";
 export default function Root() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true,
+    });
+  }, []);
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -16,7 +25,7 @@ export default function Root() {
   
   return (
     <>
-    <Nav/>
+    <Nav bg="transparent" position="fixed"/>
       <div id="backtoTop">
         <button className="Btn" onClick={() => scrollToSection("home")}>
           <svg height="1.2em" className="arrow" viewBox="0 0 512 512">
@@ -25,10 +34,11 @@ export default function Root() {
           <p className="text">Back to Top</p>
         </button>
       </div>
-      <Head />
-      <Exporting />
+      <Head imgBg={'./header.png'}/>
+      <Countries/>
       <About />
       <Choose />
+      <Pricing/>
       <Contact />
     </>
   );
