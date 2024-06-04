@@ -8,16 +8,16 @@ export default function Choose() {
         <div data-aos="fade-up-right" className="specialized flexItems">
           <img src="/1.png" alt="spfocus" />
           <div className="detail">
-            <h2>Specialized Focus</h2>
+            <h2>Tailored Services</h2>
             <p>
-              Our exclusive dedication lies in the exportation of Indian
-              products, showcasing a committed approach specifically designed to
-              meet your distinct requirements. At the heart of our mission is a
-              focus on understanding and addressing your business's unique
-              needs, extending beyond what's listed on our website. From
-              sourcing to delivery, we intricately navigate the international
-              trade landscape, ensuring a specialized and efficient process that
-              aligns seamlessly with your goals
+              We're exclusively dedicated to artfully exporting Indian products,
+              while offering a uniquely personalized import experience. Every
+              product carries its own narrative, unique needs, and
+              characteristics, which we commit to understanding and
+              encapsulating. We move beyond conventional website listings,
+              customizing our services to meet your specific requirements. Our
+              ultimate goal is to present each product in its best light for a
+              global debut that resonates powerfully with its target audience.
             </p>
           </div>
         </div>
@@ -36,24 +36,9 @@ export default function Choose() {
 
           <img src="/2.png" alt="parfocus" />
         </div>
-        <div data-aos="fade-up-right" v className="tailored flexItems">
-          <img src="/3.png" alt="parfocus" />
-          <div className="detail">
-            <h2>Tailored Solutions</h2>
-            <p>
-              Recognizing that no two businesses are alike, Ally Integra takes
-              pride in crafting customized solutions that specifically
-              acknowledge your unique needs. Our approach is meticulously
-              tailored to fit the specific requirements of your business,
-              ensuring a personalized strategy that aligns seamlessly with your
-              goals. By delving into the intricacies of your operation, we aim
-              to provide solutions that not only meet but exceed your
-              expectations, fostering a partnership grounded in understanding
-              and delivering precisely what your business demands."
-            </p>
-          </div>
-        </div>
+
         <div data-aos="fade-left" className="reliability flexItems">
+          <img src="/4.png" alt="rel" />
           <div className="detail">
             <h2>Reliability and Transparency</h2>
             <p>
@@ -64,21 +49,28 @@ export default function Choose() {
               consistently, while our commitment to transparency means you'll
               have a clear understanding of our processes, fostering a
               relationship built on trust and delivering a level of service that
-              goes beyond mere satisfaction."
+              goes beyond mere satisfaction.
             </p>
           </div>
-          <img src="/4.png" alt="rel" />
         </div>
-        {/* <div data-aos="fade-up-right" v className="Pricing flexItems">
-          <img src="/5.png" alt="pricing" />
+
+        <div data-aos="fade-left" className="reliability flexItems flexItemsPricing">
           <div className="detail">
             <h2>Pricing</h2>
             <p>
-            Our commitment to affordability is reflected in our product pricing. We offer a range of high-quality home textiles and handicrafts, with prices ranging from just $3 to $25. This pricing strategy is designed to suit every budget, without compromising on style or comfort. Importantly, this price range includes the option for customization, ensuring that our customers can enjoy personalized design within an accessible cost framework
+              Our commitment to affordability is reflected in our product
+              pricing. We offer a range of high-quality home textiles and
+              handicrafts, with prices ranging from just $5 to $25. This pricing
+              strategy is designed to suit every budget, without compromising on
+              style or comfort. Importantly, this price range includes the
+              option for customization, ensuring that our customers can enjoy
+              personalized design within an accessible cost framework
             </p>
           </div>
-        </div> */}
+          <img src="/3.png" alt="rel" />
+        </div>
       </div>
+      <img className="whyChooseUs" src="/whyChooseUs.png" alt="why choose us image" />
     </section>
   );
 }

@@ -9,7 +9,7 @@ export default function Industrial() {
       <section className="productItem">
         <h1>Industrial Solutions</h1>
         <div className="underConstruction">
-          <img src="/const.png" alt="underConstruction" />
+          <img loading="lazy" src="/const.png" alt="underConstruction" />
           <p>
             Our website is currently under construction. Please visit again
             later for updates!

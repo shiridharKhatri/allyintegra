@@ -5,7 +5,7 @@ export default function Countries() {
     <section className="countries">
       <h1>We are exporting to</h1>
       <div className="mainCountriesSection">
-        <img data-aos="zoom-out" src="./map.svg" alt="worldMap" />
+        <img loading="lazy" data-aos="zoom-out" src="./map.svg" alt="worldMap" />
         <div className="names">
           <h3 className="usa">
             <span className="countryIcon">
@@ -66,43 +66,43 @@ export default function Countries() {
         </div>
         <div className="index">
           <div className="items" data-aos="flip-up">
-            <img src="/flags/usa.png" alt="usa" />
+            <img loading="lazy" src="/flags/usa.png" alt="usa" />
             <h4>USA</h4>
           </div>
           <div className="items" data-aos="flip-up">
-            <img src="/flags/germany.png" alt="germany" />
+            <img loading="lazy" src="/flags/germany.png" alt="germany" />
             <h4>Germany</h4>
           </div>
           <div className="items" data-aos="flip-up">
-            <img src="/flags/luxembourg.png" alt="luxemburg" />
+            <img loading="lazy" src="/flags/luxembourg.png" alt="luxemburg" />
             <h4>Luxembourg</h4>
           </div>
           <div className="items" data-aos="flip-up">
-            <img src="/flags/uae.png" alt="uae" />
+            <img loading="lazy" src="/flags/uae.png" alt="uae" />
             <h4>UAE</h4>
           </div>
           <div className="items" data-aos="flip-up">
-            <img src="/flags/australia.png" alt="australia" />
+            <img loading="lazy" src="/flags/australia.png" alt="australia" />
             <h4>Australia</h4>
           </div>
           <div className="items" data-aos="flip-up">
-            <img src="/flags/netherlands.png" alt="netherland" />
+            <img loading="lazy" src="/flags/netherlands.png" alt="netherland" />
             <h4>Netherlands</h4>
           </div>
           <div className="items" data-aos="flip-up">
-            <img src="/flags/qatar.png" alt="qatar" />
+            <img loading="lazy" src="/flags/qatar.png" alt="qatar" />
             <h4>Qatar</h4>
           </div>
           <div className="items" data-aos="flip-up">
-            <img src="/flags/kuwait.png" alt="kuwait" />
+            <img loading="lazy" src="/flags/kuwait.png" alt="kuwait" />
             <h4>Kuwait</h4>
           </div>
           <div className="items" data-aos="flip-up">
-            <img src="/flags/uk.png" alt="kuwait" />
+            <img loading="lazy" src="/flags/uk.png" alt="kuwait" />
             <h4>UK</h4>
           </div>
           <div className="items" data-aos="flip-up">
-            <img src="/flags/france.png" alt="kuwait" />
+            <img loading="lazy" src="/flags/france.png" alt="kuwait" />
             <h4>France</h4>
           </div>
         </div>

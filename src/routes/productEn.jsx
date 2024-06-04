@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import Nav from "../components/Nav";
 import {
   MdAlternateEmail,
   MdOutlineProductionQuantityLimits,
@@ -58,7 +57,6 @@ export default function ProductEn() {
     );
 
     let data = await response.json();
-    console.log(data);
     if (data.succss === true) {
       successIcon.current.style.top = "4rem";
       setSuccess(false);
@@ -72,8 +70,7 @@ export default function ProductEn() {
 
   return (
     <>
-      <Nav />
-      <section className="enquiryForm partnershipEn">
+      <section className="enquiryForm partnershipEn" id="productEnquiry">
         <div className="successIcon" ref={successIcon}>
           <div className="success">
             <div className="success__icon">
@@ -198,7 +195,7 @@ export default function ProductEn() {
                   type="text"
                   name="pinterest"
                   id="pinterest"
-                  placeholder="enter value here"
+                  placeholder="Product of interest / HS CODE"
                   value={formData.pinterest}
                   onChange={handleChange}
                 />

@@ -9,7 +9,7 @@ export default function Furniture() {
       <section className="productItem">
         <h1>Furniture & Home Essentials</h1>
         <div className="underConstruction">
-          <img src="/const.png" alt="underConstruction" />
+          <img loading="lazy" src="/const.png" alt="underConstruction" />
           <p>
             Our website is currently under construction. Please visit again
             later for updates!

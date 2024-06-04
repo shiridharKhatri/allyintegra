@@ -9,13 +9,21 @@ export default function Nav(props) {
   const enquiryDropdnMobile = useRef(null);
   const navUnorderList = useRef(null);
   const [active, setActive] = useState({ product: false, enquiry: false });
-  const [activeMobile, setActiveMobile] = useState({ product: false, enquiry: false });
+  const [activeMobile, setActiveMobile] = useState({
+    product: false,
+    enquiry: false,
+  });
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setScrolled(scrollY > 100);
+      if(scrollY>140){
+        document.getElementById('backToTopBtn').style.transform= "scale(1)"
+      }else{
+        document.getElementById('backToTopBtn').style.transform= "scale(0)"
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -71,14 +79,15 @@ export default function Nav(props) {
   };
 
   const toggleDropdown = (dropdown) => {
-    
     if (dropdown === "product") {
-      productDropdnMobile.current.classList.toggle('activeProductDropDown');
-      if(productDropdnMobile.current.classList.contains('activeProductDropDown')){
-        productDropdnMobile.current.style.display = "flex"
+      productDropdnMobile.current.classList.toggle("activeProductDropDown");
+      if (
+        productDropdnMobile.current.classList.contains("activeProductDropDown")
+      ) {
+        productDropdnMobile.current.style.display = "flex";
         setActiveMobile((prev) => ({ ...prev, product: true }));
-      }else{
-        productDropdnMobile.current.style.display = "none"
+      } else {
+        productDropdnMobile.current.style.display = "none";
         setActiveMobile((prev) => ({ ...prev, product: false }));
       }
       setActive((prev) => {
@@ -86,27 +95,28 @@ export default function Nav(props) {
         productDropdn.current.style.transform = newState.product
           ? "scale(1)"
           : "scale(0)";
-          productDropdnMobile.current.style.transform = newState.product
+        productDropdnMobile.current.style.transform = newState.product
           ? "scale(1)"
           : "scale(0)";
         return newState;
       });
     } else if (dropdown === "enquiry") {
-      
       setActive((prev) => {
         let newState = { ...prev, enquiry: !prev.enquiry };
         enquiryDropdn.current.style.transform = newState.enquiry
           ? "scale(1)"
           : "scale(0)";
-          enquiryDropdnMobile.current.style.transform = newState.enquiry
+        enquiryDropdnMobile.current.style.transform = newState.enquiry
           ? "scale(1)"
           : "scale(0)";
-        
+
         return newState;
       });
-      enquiryDropdnMobile.current.classList.toggle('activeEnquiryDropDown');
+      enquiryDropdnMobile.current.classList.toggle("activeEnquiryDropDown");
 
-      if(enquiryDropdnMobile.current.classList.contains('activeEnquiryDropDown')) {
+      if (
+        enquiryDropdnMobile.current.classList.contains("activeEnquiryDropDown")
+      ) {
         enquiryDropdnMobile.current.style.display = "flex";
         setActiveMobile((prev) => ({ ...prev, enquiry: true }));
       } else {
@@ -151,19 +161,22 @@ export default function Nav(props) {
             <i className="fa-solid fa-chevron-down"></i>
           )}
           <ul ref={productDropdn} id="productDropdown">
+            <li onClick={() => scrollToSection("textile")}>
+              Home textiles & Handicrafts
+            </li>
             <li>
-              <Link to="/product/Home-textiles-&-Handicrafts">Home textiles & Handicrafts</Link>
+              <Link to="/product/Furniture-&Home_Essentials">
+                Furniture & Home Essentials
+              </Link>
             </li>
             <li>
               <Link to="/product/Footwear-Emporium">Footwear Emporium</Link>
             </li>
+
             <li>
-              <Link to="/product/Furniture-&Home_Essentials">Furniture & Home Essentials</Link>
-            </li>
-          
-          
-            <li>
-              <Link to="/product/Industrial-Solutions">Industrial Solutions</Link>
+              <Link to="/product/Industrial-Solutions">
+                Industrial Solutions
+              </Link>
             </li>
           </ul>
         </li>
@@ -176,8 +189,8 @@ export default function Nav(props) {
             <i className="fa-solid fa-chevron-down"></i>
           )}
           <ul ref={enquiryDropdn} id="dropdown">
-            <li>
-              <Link to="/enquiry/product-enquiry">Product Enquiry</Link>
+            <li onClick={() => scrollToSection("productEnquiry")}>
+            Product Enquiry
             </li>
             <li>
               <Link to="/enquiry/partnership-enquiry">Partnership Enquiry</Link>
@@ -204,19 +217,23 @@ export default function Nav(props) {
             <i className="fa-solid fa-chevron-down"></i>
           )}
           <ul ref={productDropdnMobile} id="productDropdown">
-            <li>
-              <Link to="/product/Home-textiles-&-Handicrafts">Home textiles & Handicrafts</Link>
+            <li onClick={() => scrollToSection("textile")}>
+              Home textiles & Handicrafts
             </li>
+            <li>
+              <Link to="/product/Furniture-&Home_Essentials">
+                Furniture & Home Essentials
+              </Link>
+            </li>
+
             <li>
               <Link to="/product/Footwear-Emporium">Footwear Emporium</Link>
             </li>
+
             <li>
-              <Link to="/product/Furniture-&Home_Essentials">Furniture & Home Essentials</Link>
-            </li>
-          
-          
-            <li>
-              <Link to="/product/Industrial-Solutions">Industrial Solutions</Link>
+              <Link to="/product/Industrial-Solutions">
+                Industrial Solutions
+              </Link>
             </li>
           </ul>
         </li>
@@ -228,8 +245,8 @@ export default function Nav(props) {
             <i className="fa-solid fa-chevron-down"></i>
           )}
           <ul ref={enquiryDropdnMobile} id="dropdown">
-            <li>
-              <Link to="/enquiry/product-enquiry">Product Enquiry</Link>
+            <li onClick={() => scrollToSection("productEnquiry")}>
+             Product Enquiry
             </li>
             <li>
               <Link to="/enquiry/partnership-enquiry">Partnership Enquiry</Link>

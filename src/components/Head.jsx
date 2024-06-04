@@ -9,10 +9,12 @@ export default function Head(props) {
   };
   return (
     <header
+    data-aos={props.data}
       id="home"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, .5)),
         url(${props.imgBg})`,
+        height:props.height
       }}
     >
       <div className="headText" id="headText">
@@ -20,7 +22,7 @@ export default function Head(props) {
           {" "}
           Welcome to
         </h1>
-        <img
+        <img loading="lazy"
           style={{ pointerEvents: "none", display: props.display }}
           src="/name.png"
           alt="name"
@@ -40,6 +42,7 @@ export default function Head(props) {
       </div>
       <div className="image"></div>
       <svg
+      style={{top:props.top, transform:props.transform, bottom:props.bottom,display: props.display}}
         className="waves"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -60,7 +63,7 @@ export default function Head(props) {
           <use href="#gentle-wave" x="48" y="7" fill="#fff" />
         </g>
       </svg>
-      <div className="scroll" onClick={handleScrollDown}>
+      <div style={{display:props.remove}} className="scroll" onClick={handleScrollDown}>
         <div className="scrolldown" style={{ color: "skyblue" }}>
           <div className="chevrons">
             <div className="chevrondown"></div>

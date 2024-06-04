@@ -91,6 +91,7 @@ footer {
   cursor: pointer;
   position: relative;
   border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 #backtoTop .arrow path {
@@ -118,7 +119,7 @@ footer {
   align-items: center;
 }
 .scrolldown {
-  --color: #00abe1;
+  --color: #1d1d1d;
   --sizeX: 30px;
   --sizeY: 50px;
   position: relative;
@@ -342,10 +343,10 @@ nav ul li a {
   transition: 0.2s ease;
 }
 nav ul li a:hover {
-  color: #00abe1;
+  color: #e5b80b;
 }
 nav ul li:hover {
-  color: #00abe1;
+  color: #e5b80b;
 }
 #enquiry {
   position: relative;
@@ -396,6 +397,9 @@ nav ul li:hover {
   font-size: 2rem;
   margin: 1rem 0;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+#enquiry ul li {
+  color: #1d1d1d;
 }
 header {
   height: 100vh;
@@ -478,9 +482,10 @@ header .image {
 header .image img {
   height: 35rem;
 }
-header .headText span {
-  color: #00abe1;
+header .headText h3 span {
+  color: #e5b80b;
 }
+
 header .headText h1 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 6rem;
@@ -510,11 +515,18 @@ section.about h1 {
   font-weight: 400;
   font-style: italic;
 }
-section.about b {
+section.pricing h1 {
+  color: #e5b80b;
+}
+section.pricing h1 section.about b {
   font-size: 2rem;
 }
 section.about .paragraph {
   width: 80%;
+}
+#choose img.whyChooseUs {
+  width: 100%;
+  height: auto;
 }
 section.about .chooseUs {
   display: flex;
@@ -528,7 +540,7 @@ section.about .chooseUs .flexItems {
 }
 section.about .chooseUs .flexItems img {
   height: 25rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 section.about .chooseUs .flexItems .detail {
   width: 50%;
@@ -537,10 +549,6 @@ section.about .chooseUs .flexItems .detail {
 section.about .chooseUs .partnership .detail,
 section.about .chooseUs .reliability .detail {
   margin-right: 4rem;
-}
-section.about .chooseUs .tailored .detail,
-section.about .chooseUs .specialized .detail {
-  margin-left: 4rem;
 }
 section.about .chooseUs .flexItems .detail h2 {
   font-size: 2.5rem;
@@ -628,7 +636,7 @@ section.about .paragraph p button:hover {
   display: none;
 }
 section.productItem .productDetails {
-  width: 80%;
+  width: 95%;
 }
 section.productItem .productDetails p {
   font-size: 2rem;
@@ -813,7 +821,8 @@ section.contact .flexDis .disTwo {
 section.contact .flexDis .disTwo h1 {
   font-size: 3rem;
   margin-bottom: 4rem;
-  color: #ffffff;
+  margin-left: 1rem;
+  color: #e5b80b;
   font-family: paragraph_font_head;
 }
 section.contact .flexDis .disTwo ul {
@@ -1074,36 +1083,40 @@ section.countries .mainCountriesSection h3.uk {
 }
 section.productItem .categories .cardSection {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
   margin: 8rem auto 0rem;
 }
 section.productItem .categories .cardSection .items {
   padding: 2rem;
-  background: #f0fbff;
   margin: 2rem;
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  background: #1d1d1d;
 }
 section.productItem .categories .cardSection .items h2 {
   font-size: 2.5rem;
   font-family: paragraph_font_head;
-  color: #1d1d1d;
+  color: #e5b80b;
 }
 section.productItem .categories .cardSection .items p {
   font-size: 1.5rem;
   margin: 2rem 0;
   font-family: paragraph_font;
-  color: #1d1d1d;
+  color: #ffffff;
 }
 section.productItem .categories .cardSection .items button {
   padding: 1rem 2rem;
-  height: 4.5rem;
+  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 3rem;
-  background: #1d1d1d2e;
-  color: #1d1d1d;
+  border-radius: 1rem;
+  background: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  color: #ffffff;
   border: none;
   font-size: 1.4rem;
   font-weight: bold;
@@ -1185,16 +1198,36 @@ section.pricing .pricingContainer .thirdSection h2 {
   border-bottom: 0.2rem solid #ffffff;
 }
 section.bedsheet .imageGal {
-  margin-bottom: 15rem;
+  margin-bottom: 4rem;
+}
+section.bedsheet .btnViewMore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+section.bedsheet button {
+  padding: 1rem 2.5rem;
+  width: auto;
+  border-radius: 3rem;
+  border: none;
+  background: #1d1d1d;
+  color: #ffffff;
+  height: 4.5rem;
+  cursor: pointer;
+}
+section.bedsheet button:disabled {
+  background: #1d1d1d90;
 }
 section.bedsheet .headtext {
-  height: 100vh;
+  height: auto;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-section.bedsheet .headtext .slide {
+section.bedsheet .swiper-backface-hidden .swiper-slide {
+  padding: 5rem 0 !important;
 }
 section.bedsheet .headtext .text {
   width: 85%;
@@ -1205,13 +1238,30 @@ section.bedsheet .headtext .text h1 {
   font-size: 3rem;
   font-family: paragraph_font_head;
   margin-bottom: 1rem;
-  margin-top: 20rem;
+  margin-top: 0;
+}
+section.bedsheet .headtext .pHeadTwo {
+  width: 74rem;
+  color: #ffffff;
+  padding: 0 15rem 0 10rem;
+}
+.styles-module_wrapper__1I_qj {
+  z-index: 99999999 !important;
+}
+section.bedsheet .callToAction {
+  margin-bottom: 6rem;
 }
 section.bedsheet .headtext .text p {
   font-size: 2rem;
   margin: 2rem 0;
   font-family: paragraph_font;
   line-height: 1.5;
+}
+section.bedsheet .headtext .text p.firstPagra {
+  font-size: 2.1rem;
+}
+section.bedsheet .headtext .text p span {
+  color: #e5b80b;
 }
 section.bedsheet .imageGal h1 {
   font-size: 3rem;
@@ -1220,14 +1270,16 @@ section.bedsheet .imageGal h1 {
 }
 section.bedsheet .imageGal .imgContainer {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 2rem;
   width: 95%;
   margin: 4rem auto;
 }
 section.bedsheet .imageGal .imgContainer img {
   width: 100%;
+  height: 100%;
   cursor: pointer;
+  background: #1d1d1d;
 }
 section.bedsheet .callToAction a {
   text-decoration: none;
@@ -1255,6 +1307,60 @@ section.bedsheet .callToAction button:hover {
   height: 1rem !important;
   border-radius: 1rem !important;
   background: #ffffff !important;
+}
+#whatsApp {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#whatsApp button {
+  margin-top: 1rem;
+  background: #25ac56 !important;
+  font-size: 2rem;
+  color: #ffffff;
+}
+#whatsApp .toolpit {
+  position: absolute;
+  left: -8rem;
+  top: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: #1d1d1d;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  font-family: paragraph_font;
+  transform: scale(0);
+  transition: 0.3s ease;
+}
+#whatsApp button:hover + .toolpit {
+  transform: scale(1);
+}
+#backToTopBtn {
+  transform: scale(0);
+  transition: 0.3s ease;
+}
+section.Puff .first {
+  width: 43rem;
+}
+section.Puff .firstHead {
+  width: auto !important;
+}
+section.Puff .headtext .text p {
+  font-size: 2.3rem;
+}
+section.Puff .headtext .text p span {
+  color: #e5b80b;
+}
+p#highloghtedText {
+  font-size: 2.2rem;
+  color: #e5b80b;
+  font-weight: bold;
+}
+.swiper-pagination-bullet-active{
+  background: #e5b80b !important;
 }
 @media screen and (max-width: 1020px) {
   #hiddenMenu {
@@ -1307,6 +1413,7 @@ section.bedsheet .callToAction button:hover {
   section.about .paragraph {
     width: 95%;
   }
+
   #productDropdown li a {
     font-size: 1.8rem;
   }
@@ -1377,18 +1484,21 @@ section.bedsheet .callToAction button:hover {
   section.countries .mainCountriesSection h3 {
     display: none;
   }
+  section.bedsheet .headtext .text {
+    padding: 0 6rem;
+  }
 }
 
 @media screen and (max-width: 800px) {
   section.about .chooseUs .partnership {
     flex-direction: column-reverse !important;
   }
-  section.about .chooseUs .reliability {
-    flex-direction: column-reverse !important;
-  }
   section.about .chooseUs .flexItems {
     flex-direction: column;
     padding: 0rem;
+  }
+  section.about .chooseUs .flexItemsPricing {
+    flex-direction: column-reverse !important;
   }
   section.about .chooseUs .flexItems .detail {
     width: 100%;
@@ -1453,15 +1563,12 @@ section.bedsheet .callToAction button:hover {
   section.bedsheet .headtext .text {
     padding: 0 3rem;
   }
-  section.bedsheet .headtext {
-    height: 80vh;
-  }
-  section.bedsheet .headtext .text h1 {
-    margin-top: 12rem;
-  }
+
   section.bedsheet .imageGal .imgContainer {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+@media screen and (max-width: 650px) {
 }
 @media screen and (max-width: 580px) {
   section.pricing .pricingContainer .cards {
@@ -1495,9 +1602,7 @@ section.bedsheet .callToAction button:hover {
   section.productItem .productDetails {
     width: 90%;
   }
-  section.bedsheet .headtext .text h1 {
-    margin-top: 9rem;
-  }
+
   section.bedsheet .headtext .text {
     width: 100%;
   }
@@ -1510,6 +1615,24 @@ section.bedsheet .callToAction button:hover {
   section.bedsheet .imageGal .imgContainer {
     gap: 1rem;
   }
+  header .image {
+    display: none;
+  }
+  header .headText {
+    margin: 7rem 0 0 5rem;
+  }
+  section.productItem .categories {
+    width: 97%;
+  }
+  section.bedsheet .callToAction button {
+    margin: 0 0 0 1rem;
+  }
+  section.Puff .first {
+    width: 80%;
+  }
+  section.Puff .first p {
+    font-size: 2rem !important;
+  }
 }
 @media screen and (max-width: 500px) {
   header .headText {
@@ -1519,7 +1642,7 @@ section.bedsheet .callToAction button:hover {
     height: 5rem;
   }
   header .headText h1 {
-    font-size: 5rem;
+    font-size: 4rem;
   }
   header .headText h3 {
     font-size: 2.5rem;
@@ -1599,6 +1722,12 @@ section.bedsheet .callToAction button:hover {
   }
   section.pricing .pricingContainer .cards ul li {
     font-size: 1.7rem;
+  }
+  section.Puff .first {
+    width: 100%;
+  }
+  section.productItem .categories .cardSection .items {
+    margin: 1rem;
   }
 }
 @media screen and (max-width: 400px) {

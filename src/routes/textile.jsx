@@ -4,9 +4,15 @@ import Head from "../components/Head";
 import { FaChevronRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 export default function Textile() {
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <>
-      <Nav position={"fixed"} bg={"transparent"} />
+    <section id="textile">
       <Head
         imgBg={"../product/18.png"}
         display={"none"}
@@ -14,9 +20,13 @@ export default function Textile() {
         belowtextFirst=" Blending"
         keyPoint=" Comfort"
         belowtextSecond=" with elegance"
+        remove="none"
+        top="0"
+        transform="rotate(180deg)"
+        height="65vh"
+        data="flip-up"
       />
       <section className="productItem">
-        <h1>Introduction</h1>
         <div className="productDetails">
           <p>
             With our rich experience and prowess, we're set to make waves on the
@@ -40,36 +50,103 @@ export default function Textile() {
         </div>
         <div className="categories">
           <div className="cardSection">
-            <div className="items">
+            <div
+              className="items"
+              style={{
+                background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .9)),
+        url(/title/bedsheet.png`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                color: "#ffffff",
+              }}
+            >
               <h2>Bedsheet</h2>
               <p>Tailored Tranquility: Designing Your Dream Sleep Sanctuary</p>
-              <Link to="/product/Home-textiles-&-Handicrafts/bedsheet">
-                <button>
-                  View more&nbsp;
-                  <FaChevronRight />
-                </button>
-              </Link>
+
+              <button onClick={() => scrollToSection("bedsheet")}>
+                View more&nbsp;
+                <FaChevronRight />
+              </button>
             </div>
-            <div className="items">
+            <div
+              style={{
+                background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .9)),
+        url(/title/cushion.png`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                color: "#ffffff",
+              }}
+              className="items"
+            >
               <h2>Cushions</h2>
               <p>Cozy and Classy, Soft and Sassy</p>
-              <Link to="/product/Home-textiles-&-Handicrafts/cushions">
-                <button>
-                  View more&nbsp;
-                  <FaChevronRight />
-                </button>
-              </Link>
+
+              <button onClick={() => scrollToSection("cushions")}>
+                View more&nbsp;
+                <FaChevronRight />
+              </button>
             </div>
-            <div className="items">
-              <h2>Macrame</h2>
-              <p>Woven Wonders: Crafting Love, Knot by Knot.</p>
-              <Link to="">
-                <button>
-                  View more&nbsp;
-                  <FaChevronRight />
-                </button>
-              </Link>
+            <div
+              style={{
+                background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .9)),
+        url(/title/stool.png`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                color: "#ffffff",
+              }}
+              className="items"
+            >
+              <h2>Pouffe Stools</h2>
+              <p>Seating with Substance: Pouffe Stools that Echo Elegance</p>
+
+              <button onClick={() => scrollToSection("stool")}>
+                View more&nbsp;
+                <FaChevronRight />
+              </button>
             </div>
+
+            <div
+              style={{
+                background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .9)),
+        url(/title/cotton.png`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                color: "#ffffff",
+              }}
+              className="items"
+            >
+              <h2>Jute & Cotton Bags</h2>
+              <p>Sustainably stylish: Carry your world in jute & cotton</p>
+              <button onClick={() => scrollToSection("handbags")}>
+                View more&nbsp;
+                <FaChevronRight />
+              </button>
+            </div>
+
+            <div
+              style={{
+                background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .6)),
+        url(/title/carpet.png`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                color: "#ffffff",
+              }}
+              className="items"
+            >
+              <h2>Carpets & Rugs</h2>
+              <p>Woven Wonders: Weaving Luxurious Stories Under Your Feet</p>
+
+              <button onClick={() => scrollToSection("carpet")}>
+                View more&nbsp;
+                <FaChevronRight />
+              </button>
+            </div>
+
             <div className="items">
               <h2>Curtains</h2>
               <p>Curtain Call: Setting the Stage for Your Home's Story</p>
@@ -90,31 +167,9 @@ export default function Textile() {
                 </button>
               </Link>
             </div>
-            <div className="items">
-              <h2>Carpets & Rugs</h2>
-              <p>Woven Wonders: Weaving Luxurious Stories Under Your Feet</p>
-              <Link to="">
-                <button>
-                  View more&nbsp;
-                  <FaChevronRight />
-                </button>
-              </Link>
-            </div>
-            <div className="items">
-              <h2>Pouffe Stools</h2>
-              <p>
-              Seating with Substance: Pouffe Stools that Echo Elegance
-              </p>
-              <Link to="">
-                <button>
-                  View more&nbsp;
-                  <FaChevronRight />
-                </button>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
-    </>
+    </section>
   );
 }

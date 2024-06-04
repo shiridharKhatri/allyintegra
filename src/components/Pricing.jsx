@@ -14,7 +14,7 @@ export default function Pricing() {
         framework
       </p>
       <div className="pricingContainer">
-        <div className="firstSection cards">
+        <div className="firstSection cards" data-aos="zoom-out-right">
           <h3>Handicrafts</h3>
           <h2>$5 - $25</h2>
           <ul>
@@ -28,11 +28,11 @@ export default function Pricing() {
             <li>Including Customization</li>
           </ul>
         </div>
-        <div className="secondSection cards">
+        <div className="secondSection cards" data-aos="zoom-out-down">
           <h3>Hotel and Home textiles</h3>
           <h2>$5 - $25</h2>
           <ul>
-            <li>Bedsheets & Home testiles</li>
+            <li>Bedsheets & Home textiles</li>
             <li>Blankets</li>
             <li>Hotel Linen</li>
             <li>Quilts</li>
@@ -42,7 +42,7 @@ export default function Pricing() {
             <li>Including Customization</li>
           </ul>
         </div>
-        <div className="thirdSection cards">
+        <div className="thirdSection cards" data-aos="zoom-out-left">
           <h3>Carpets</h3>
           <h2>$5 - $25</h2>
           <ul>

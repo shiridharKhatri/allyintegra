@@ -6,7 +6,7 @@ export default function Contact() {
     <section className="contact" id="contact">
       <div data-aos="zoom-in-up" className="flexDis">
         <div className="disOne">
-          <img src="/contact.gif" alt="contact" />
+          <img loading="lazy" src="/contact.gif" alt="contact" />
         </div>
         <div className="disTwo">
           <h1>Get in touch</h1>

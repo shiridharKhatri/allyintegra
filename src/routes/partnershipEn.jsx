@@ -55,7 +55,6 @@ export default function PartnershipEn() {
     );
 
     let data = await response.json();
-    console.log(data);
     if (data.succss === true) {
       successIcon.current.style.top = "4rem";
       setSuccess(false);

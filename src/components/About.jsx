@@ -53,10 +53,7 @@ export default function About() {
             Whether you're a flourishing startup, a well-established enterprise,
             or an entity in search of a reliable collaborator in international
             trade, we are resolute in our dedication to joining forces and
-            crafting extraordinary success stories together. The narrative
-            unfolds with each partnership, a tale of shared triumphs and global
-            impact, as we continue to script chapters of collaborative success
-            in the world of business."
+            crafting extraordinary success stories together.
           </p>
           <p data-aos="fade-up" data-aos-anchor-placement="center-bottom">
             <b>
