@@ -1220,7 +1220,7 @@ section.bedsheet button:disabled {
   background: #1d1d1d90;
 }
 section.bedsheet .headtext {
-  height: auto;
+  height: 50rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -1362,6 +1362,11 @@ p#highloghtedText {
 .swiper-pagination-bullet-active{
   background: #e5b80b !important;
 }
+@media screen and (max-width: 1200px) {
+  section.bedsheet .headtext{
+    height: 65rem;
+  }
+}
 @media screen and (max-width: 1020px) {
   #hiddenMenu {
     display: block;
@@ -1479,6 +1484,7 @@ p#highloghtedText {
     top: 47.5%;
     left: 60.5%;
   }
+
 }
 @media screen and (max-width: 930px) {
   section.countries .mainCountriesSection h3 {
@@ -1630,9 +1636,15 @@ p#highloghtedText {
   section.Puff .first {
     width: 80%;
   }
-  section.Puff .first p {
+  section.Puff .firstContentPara p {
     font-size: 2rem !important;
   }
+  section.bedsheet .headtext {
+    height: 50rem;
+}
+}
+section.bedsheet .headtextMobile {
+  height: 60rem;
 }
 @media screen and (max-width: 500px) {
   header .headText {

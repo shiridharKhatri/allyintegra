@@ -99,7 +99,7 @@ export default function Puff() {
             }}
             className="slide"
           >
-            <div className="text">
+            <div className="text firstContentPara">
               <h1>POUFFE STOOLS</h1>
               <div className="first">
                 <div>

@@ -74,7 +74,7 @@ export default function Bedsheet() {
               clickable: true,
             }}
             modules={[Autoplay, Pagination]}
-            className="mySwiper headtext"
+            className="mySwiper headtextMobile headtext"
           >
             <SwiperSlide
               style={{
